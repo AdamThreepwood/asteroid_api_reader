@@ -1,6 +1,6 @@
 
 let today = new Date().toISOString().slice(0, 10)
-
+//let lastWeek = today
 
 console.log(today)
 
@@ -30,6 +30,7 @@ let searchButton = document.querySelector("#search")
 searchButton.addEventListener("click", ()=>{
   console.log("button pressed")
   getData()
+  asteroidData()
 })
 
 
@@ -38,10 +39,10 @@ async function getData(){
   fetch(url)
     .then(res => res.json()) 
     .then(data => {
-
+      
     
       console.log(data)
-      
+      asteroidData(data)
       
       
     })
@@ -49,10 +50,9 @@ async function getData(){
 }
 
 
-
-function asteroidData(data){
-  console.log(data)
-  //document.querySelector("#content").innerHTML = data.near_earth_objects["2021-07-30"][0].estimated_diameter.kilometers.estimated_diameter_max;
+async function asteroidData(data){
+  document.querySelector("#content").innerHTML = data.near_earth_objects[today][0].estimated_diameter.kilometers.estimated_diameter_max;
 
 }
+
 
