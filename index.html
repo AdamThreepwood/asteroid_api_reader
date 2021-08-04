@@ -1,34 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>API NeoWs</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    th{ 
+        color:#fff;
+            }
+</style>
 
 
-    <script src="/fetchData.js" defer></script>
-  </head>
-  <body>
-    <h1>
-      Asteroid diamaters. 
-    </h1>
-    <input id="searchTerm" type="text" placeholder="Press search to load data." />
-    <button id="search">
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>First</th>
+        <th>Last</th>
+        <th>Email</th>
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+ <button id="search">
       Search
     </button>
-    <div id="content">
-      
-    </div>
-    
-    <p>
-      Fetching data about asteroids close to earth from NASA. Work in progress.
-    </p>
-    <small>
-    Data-set: All the data is from the NASA JPL Asteroid team (http://neo.jpl.nasa.gov/).
-    </small>
-    
-  </body>
-</html>
+
+<script>
+  var myArray = []
+  let today = new Date().toISOString().slice(0, 10)
+
+console.log(today)
+
+function createDate(days, months, years) {
+        var today = new Date();
+        today.setDate(today.getDate() + days);
+        today.setMonth(today.getMonth() + months);
+        today.setFullYear(today.getFullYear() + years);
+        return today;    
+    }
+
+let lastWeek = createDate(-6, 0, 0).toISOString().slice(0, 10)
+
+console.log(lastWeek)
+
+let url = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=' + lastWeek + '&end_date=' + today + '&api_key=DEMO_KEY'
+
+let searchButton = document.querySelector("#search")
+
+
+searchButton.addEventListener("click", ()=>{
+  console.log("button pressed")
+  	$.ajax({
+		method:'GET',
+		url: url,
+		success:function(response){
+			myArray = response.near_earth_objects
+			buildTable(myArray)
+			console.log(myArray)
+		}
+	})
+})	
+
+
+
+
+
+	function buildTable(near_earth_objects){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < near_earth_objects.length; i++){
+			var row = `<tr>
+							<td>${near_earth_objects[i][0].name}</td>
+							<td>${data[i].last_name}</td>
+							<td>${data[i].email}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
