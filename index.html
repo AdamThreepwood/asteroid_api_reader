@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>API NeoWs</title>
+    <title>API Template</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
 
-
+    <!-- import the webpage's javascript file -->
     <script src="/fetchData.js" defer></script>
   </head>
   <body>
     <h1>
-      Asteroid diamaters. 
+      The diameters of asteroids near earth today
     </h1>
-    <input id="searchTerm" type="text" placeholder="Press search to load data." />
     <button id="search">
-      Search
+      Fetch
     </button>
     <div id="content">
-      
     </div>
     
     <p>
-      Fetching data about asteroids close to earth from NASA. Work in progress.
+      Fetching data about asteroids close to earth from NASA. <br>
+      Fetching JSON data, nested in several layers, with a variable that <br>
+      automatically requests data between the current date and a week ago. 
     </p>
     <small>
     Data-set: All the data is from the NASA JPL Asteroid team (http://neo.jpl.nasa.gov/).
