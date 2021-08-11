@@ -68,10 +68,10 @@ async function asteroidData(data){
     
     
     
-    document.querySelector("#content").innerHTML += astKm;
+    document.querySelector("#content").innerHTML += "<br>" + astKm + "km in diameter" ;
     
     
- // 
+
   }
 }
 
