@@ -1,36 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>API Template</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html>
+  
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+	<title>Bio</title>
+    <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+</head>
+<body>
+  
 
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
 
-    <!-- import the webpage's javascript file -->
-    <script src="/fetchData.js" defer></script>
-  </head>
-  <body>
-    <h1>
-      The diameters of asteroids near earth today
-    </h1>
-    <button id="search">
-      Fetch
-    </button>
-    <div id="loading">  </div> 
-    <div id="content">
+<nav>
+  <div class="topnav"  id="myTopnav">
+  <a href="diastic.html">Diastic</a>
+  <a href="animations.html">Animations and flocks</a>
+  <a href="index.html">Generators and API</a>
+  <a href="javascript:void(0);" class="icon" onclick="homeBtn()">
+    <i class="fa fa-bars"></i></a>
+</div></nav>
+
+  
+
+ 
+<!-- <div class="content">
+  <h3>Threepwood</h3>
+  <p>Developing myself as well as code.</p>
+  </div>
+    -->
+  
+   <div class = "box" id= "fanficBox">
+   <h2> The diameters of asteroids near earth today </h2>
+     <h2 id = "dateShow"></h2>
+    <button class = "button" id="fetch"> Fetch today</button>
+    <button class = "button" id="fetchYesterday"> Fetch yesterday</button>
+            <div id="loading">  </div> 
+            <div id="asteroidsContent">
+              <div id = chartWindows>
+              <canvas id ="myChart"></canvas>
+              </div>
     </div>
-    
-    <p>
-      Fetching data about asteroids close to earth from NASA. <br>
-      Fetching JSON data, nested in several layers, with a variable that <br>
+     <p>
+        Fetching data about asteroids close to earth from NASA.
+      Fetching JSON data, nested in several layers, with a variable that 
       automatically requests data between the current date and a week ago. 
-    </p>
-    <small>
+     </p>
+  
+
+         <small>
     Data-set: All the data is from the NASA JPL Asteroid team (http://neo.jpl.nasa.gov/).
     </small>
+  </div>
+
+  
+  
+  
+  <div class = "box" id= "fanficBox">
+   <h2>Generated fiction:</h2>
+  <div id="fanfic"></div>
+  <div id = "fanfic2">
+  </div>
+      <button class = "button" id="resetFic" onclick = "click1()"> Make a new fiction</button>
+  </div>
+
+
+  
+<!--
+<div id= "quoteBox">
+   <h4>API created poem of the day:</h4>
+<body onload="getQuote()">
+  <div id="quote"></div>
+  <p id = "dataCredit"> Raw data from happycoding.io
     
-  </body>
+  </p>
+  </div>
+-->
+
+
+
+  
+<div class = "developer">
+
+ Currently working on improving my skills in Java and React. <br>
+ Other skills under development are Kotlin, REST API and .Net.<br>
+ Current skill set mainly in front-end, JSON APIs and Python. 
+  
+
+ Please check out the topnav for projects in javascript and API fetching.
+ <br> A long term goal is to create a web app focusing on history.
+  <br> Who knows what life will bring.
+  
+  </div>
+  
+  
+  <div class = "developer">
+  Please see a couple of projects under the tabs "Animations and flocks" as well as "Diastic". More projects to be added soon, including more advanced API calls.
+  You are very wlcome to visit my <a id ="divLink" href="https://github.com/AdamThreepwood">Github Adam Threepwood</a>.
+
+    </div>
+<footer>
+  
+  Contact information will be placed here. <br>
+  Github: <a href="https://github.com/AdamThreepwood">Adam Threepwood</a> 
+  
+</footer>  
+            <script src="https://cdn.jsdelivr.net/npm/p5"></script>		
+        <script language="javascript" type="text/javascript" src="fetchAsteroids.js"></script>	
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
+
+
+
+</body>
 </html>
