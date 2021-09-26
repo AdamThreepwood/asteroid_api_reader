@@ -91,6 +91,7 @@ a:hover {
     margin-bottom: 30px;
     margin-left: 30px;
     box-shadow: 5px 15px 10px rgba(0,0,0,0.15)
+    
 }
 
 
@@ -119,6 +120,7 @@ a:hover {
 .topnav a:hover {
   background-color: #dcffd1;
   color: black;
+  transition: 0.6s;
 }
 
 footer {
@@ -138,6 +140,7 @@ footer {
 
 .topnav .icon {
   display: none;
+
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
@@ -146,6 +149,10 @@ footer {
   .topnav a.icon {
     float: right;
     display: block;
+    font-size: 28px;
+    
+    
+    
   }
 }
 
@@ -178,10 +185,7 @@ footer {
   transition: 0.3s;
   
 }
-#resetFic:hover {
-  color: #fff;
-  background: #000;
-}
+
   
   
 .button {
@@ -196,7 +200,10 @@ footer {
   cursor: pointer;
   border-radius: 15px;
   transition: 0.3s;
-  
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
   
 #loading {
@@ -217,3 +224,4 @@ footer {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
